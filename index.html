@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday 🌷</title>
+
+<style>
+
+/* =====================================================
+   FONTS
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    min-height: 100svh;
+    min-height: 100dvh;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: #fff;
+
+    overflow-x: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(126, 92, 220, .22),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255, 110, 190, .14),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(75, 90, 210, .12),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            #070918,
+            #12102b 50%,
+            #080716
+        );
+}
+
+
+/* =====================================================
+   STAR FIELD
+===================================================== */
+
+.stars {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    opacity: .75;
+}
+
+
+/* Individual random stars */
+
+.star {
+
+    position: absolute;
+
+    color: #fff;
+
+    font-size: 8px;
+
+    opacity: .25;
+
+    animation:
+        twinkle
+        var(--duration)
+        ease-in-out
+        infinite
+        alternate;
+
+    animation-delay:
+        var(--delay);
+}
+
+@keyframes twinkle {
+
+    0% {
+        opacity: .12;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: .75;
+    }
+
+    100% {
+        opacity: .18;
+        transform: scale(1.2);
+    }
+}
+
+
+/* =====================================================
+   FLOATING ORBS
+===================================================== */
+
+.orb {
+
+    position: fixed;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(190,130,255,.08);
+
+    filter: blur(5px);
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation:
+        orbFloat
+        8s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+.orb.one {
+
+    top: -70px;
+    right: -60px;
+}
+
+.orb.two {
+
+    bottom: -80px;
+    left: -70px;
+
+    animation-delay: -4s;
+}
+
+@keyframes orbFloat {
+
+    from {
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(-15px,20px)
+            scale(1.08);
+    }
+}
+
+
+/* =====================================================
+   SCREENS
+===================================================== */
+
+.screen {
+
+    min-height: 100svh;
+    min-height: 100dvh;
+
+    width: 100%;
+
+    padding: 30px 22px;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.screen.active {
+
+    display: flex;
+
+    animation:
+        screenReveal
+        .65s
+        ease;
+}
+
+
+/* Default screen animation */
+
+@keyframes screenReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   SCREEN-SPECIFIC REVEALS
+===================================================== */
+
+#screen2.active .girl {
+
+    animation:
+        imageReveal
+        .8s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes imageReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.82)
+            translateY(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+#screen3.active .chat-memory {
+
+    animation:
+        memoryReveal
+        .7s
+        ease;
+}
+
+@keyframes memoryReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            rotate(-3deg);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(-1.2deg);
+    }
+}
+
+
+#screen4.active .card {
+
+    animation:
+        cardPop
+        .5s
+        ease
+        both;
+}
+
+#screen4.active .card:nth-child(1) {
+    animation-delay: .05s;
+}
+
+#screen4.active .card:nth-child(2) {
+    animation-delay: .12s;
+}
+
+#screen4.active .card:nth-child(3) {
+    animation-delay: .19s;
+}
+
+#screen4.active .card:nth-child(4) {
+    animation-delay: .26s;
+}
+
+@keyframes cardPop {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(.96);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.small {
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    opacity: .62;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+h1 {
+
+    font-family:
+        'DM Serif Display',
+        serif;
+
+    font-size:
+        clamp(42px, 12vw, 65px);
+
+    line-height: 1.05;
+
+    font-weight: normal;
+}
+
+h2 {
+
+    font-family:
+        'DM Serif Display',
+        serif;
+
+    font-size: 34px;
+
+    font-weight: normal;
+
+    margin-bottom: 18px;
+}
+
+h3 {
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    opacity: .75;
+
+    max-width: 340px;
+
+    margin-bottom: 22px;
+}
+
+.highlight {
+
+    color: #ffb7d5;
+}
+
+p {
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+    opacity: .85;
+
+    max-width: 340px;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+button {
+
+    border: none;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffb7d5,
+            #d99cff
+        );
+
+    color: #24101b;
+
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    margin-top: 30px;
+
+    font-size: 14px;
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(255,183,213,.15);
+
+    cursor: pointer;
+
+    transition:
+
+        transform .2s ease,
+
+        box-shadow .2s ease,
+
+        opacity .3s ease;
+}
+
+button:hover {
+
+    box-shadow:
+
+        0 12px 35px
+        rgba(255,183,213,.28);
+
+    transform:
+        translateY(-1px);
+}
+
+button:active {
+
+    transform:
+        scale(.95);
+}
+
+
+/* =====================================================
+   SCREEN 2 - GIRL IMAGE
+===================================================== */
+
+.girl {
+
+    width: 210px;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius:
+        110px 110px 25px 25px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+
+        0 20px 60px
+        rgba(0,0,0,.45),
+
+        0 0 35px
+        rgba(255,170,220,.06);
+}
+
+
+/* =====================================================
+   MESSAGE BOX
+===================================================== */
+
+.message-box {
+
+    background:
+        rgba(255,255,255,.055);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    border-radius: 24px;
+
+    padding: 25px 20px;
+
+    max-width: 360px;
+
+    box-shadow:
+
+        0 15px 45px
+        rgba(0,0,0,.18),
+
+        inset 0 1px
+        rgba(255,255,255,.05);
+}
+
+
+/* =====================================================
+   CHAT MEMORY
+===================================================== */
+
+.chat-memory {
+
+    width: 100%;
+
+    max-width: 330px;
+
+    margin-bottom: 22px;
+
+    text-align: left;
+}
+
+.memory-label {
+
+    font-size: 13px;
+
+    letter-spacing: .7px;
+
+    opacity: .58;
+
+    margin-bottom: 9px;
+
+    padding-left: 8px;
+}
+
+.chat-memory img {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 330px;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    box-shadow:
+
+        0 18px 50px
+        rgba(0,0,0,.38),
+
+        0 0 30px
+        rgba(170,110,255,.05);
+
+    transform:
+        rotate(-1.2deg);
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+}
+
+.chat-memory img:active {
+
+    transform:
+        rotate(0deg)
+        scale(.98);
+
+    box-shadow:
+
+        0 10px 35px
+        rgba(0,0,0,.4);
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.cards {
+
+    width: 100%;
+
+    max-width: 370px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.card {
+
+    text-align: left;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 10px 35px
+        rgba(0,0,0,.18),
+
+        inset 0 1px
+        rgba(255,255,255,.05);
+
+    transition:
+
+        transform .2s ease,
+
+        background .2s ease,
+
+        box-shadow .2s ease;
+}
+
+.card:active {
+
+    transform:
+        scale(.985);
+}
+
+.card.open {
+
+    background:
+        rgba(255,255,255,.075);
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(0,0,0,.25),
+
+        0 0 20px
+        rgba(217,156,255,.05);
+}
+
+.card-title {
+
+    font-weight: 500;
+}
+
+.card-content {
+
+    display: none;
+
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    opacity: .75;
+}
+
+.card.open .card-content {
+
+    display: block;
+
+    animation:
+        fadeIn
+        .3s
+        ease;
+}
+
+
+/* =====================================================
+   FINAL SCREEN
+===================================================== */
+
+#screen5 {
+
+    justify-content: flex-start;
+
+    padding-top: 55px;
+
+    padding-bottom: 100px;
+}
+
+
+/* =====================================================
+   FINAL CARD
+===================================================== */
+
+.final-card {
+
+    width: 100%;
+
+    max-width: 370px;
+
+    padding: 28px 20px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    transition:
+
+        all .8s
+        cubic-bezier(.2,.8,.2,1);
+
+    box-shadow:
+
+        0 25px 80px
+        rgba(0,0,0,.35),
+
+        inset 0 1px
+        rgba(255,255,255,.08);
+}
+
+.final-card.celebrated {
+
+    max-width: 390px;
+
+    padding: 38px 20px;
+
+    background:
+        rgba(190,130,255,.075);
+
+    box-shadow:
+
+        0 25px 90px
+        rgba(0,0,0,.4),
+
+        0 0 60px
+        rgba(190,130,255,.12),
+
+        inset 0 1px
+        rgba(255,255,255,.10);
+}
+
+
+/* =====================================================
+   FINAL CAKE / HEART
+===================================================== */
+
+.final-heart {
+
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    animation:
+        heartbeat
+        1.5s
+        infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.12);
+    }
+}
+
+
+/* =====================================================
+   GIF
+===================================================== */
+
+.birthday-gif {
+
+    width: 100%;
+
+    max-width: 300px;
+
+    max-height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    margin-top: 25px;
+
+    opacity: 0;
+
+    transform:
+        scale(.7);
+
+    display: none;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    box-shadow:
+
+        0 15px 50px
+        rgba(0,0,0,.35);
+}
+
+.final-card.celebrated
+.birthday-gif {
+
+    display: block;
+
+    animation:
+
+        gifReveal
+        .8s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+@keyframes gifReveal {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(.7);
+    }
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.05);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   PARTY MESSAGE
+===================================================== */
+
+.party-message {
+
+    display: none;
+
+    margin-top: 28px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.10);
+
+    animation:
+
+        revealDown
+        .8s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+.final-card.celebrated
+.party-message {
+
+    display: block;
+}
+
+@keyframes revealDown {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.party-message p {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    max-width: 330px;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   PARTY MENU
+===================================================== */
+
+.party-menu {
+
+    text-align: left;
+
+    width: 100%;
+
+    max-width: 300px;
+
+    margin: 15px auto;
+
+    padding: 16px 18px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    box-shadow:
+        inset 0 1px
+        rgba(255,255,255,.03);
+}
+
+.party-menu div {
+
+    margin: 8px 0;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   SWIPE HINT
+===================================================== */
+
+.swipe-hint {
+
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    opacity: .65;
+
+    animation:
+
+        swipeBounce
+        1.4s
+        ease-in-out
+        infinite;
+}
+
+@keyframes swipeBounce {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(6px);
+    }
+}
+
+
+/* =====================================================
+   CANDLE SECTION
+===================================================== */
+
+.candle-section {
+
+    width: 100%;
+
+    max-width: 390px;
+
+    margin-top: 35px;
+
+    padding: 30px 20px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    box-shadow:
+
+        0 25px 80px
+        rgba(0,0,0,.35),
+
+        inset 0 1px
+        rgba(255,255,255,.08);
+
+    display: none;
+
+    animation:
+
+        cakeReveal
+        .9s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+.final-card.celebrated
+~ .candle-section {
+
+    display: block;
+}
+
+@keyframes cakeReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(.96);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   CANDLE FLAMES
+===================================================== */
+
+.candles {
+
+    font-size: 34px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: -4px;
+
+    transition:
+
+        all .6s ease;
+
+    animation:
+
+        candleFlicker
+        1s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+@keyframes candleFlicker {
+
+    from {
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    to {
+
+        transform:
+            translateY(-2px)
+            scale(1.03);
+    }
+}
+
+
+/* After blowing */
+
+.candles.blown {
+
+    opacity: .18;
+
+    transform:
+        translateY(-10px)
+        scale(.85);
+
+    filter:
+        grayscale(1);
+
+    animation: none;
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+.cake {
+
+    font-size: 90px;
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+
+    filter:
+        drop-shadow(
+            0 15px 25px
+            rgba(255,183,213,.18)
+        );
+
+    transition:
+
+        transform .6s ease,
+
+        filter .6s ease;
+}
+
+.candle-section.blown-cake
+.cake {
+
+    transform:
+        scale(1.06);
+
+    filter:
+        drop-shadow(
+            0 0 35px
+            rgba(255,183,213,.45)
+        );
+}
+
+
+/* =====================================================
+   CANDLE TITLE
+===================================================== */
+
+.candle-title {
+
+    font-family:
+        'DM Serif Display',
+        serif;
+
+    font-size: 28px;
+
+    margin-bottom: 12px;
+
+    transition:
+
+        color .5s ease,
+
+        transform .5s ease;
+}
+
+
+/* =====================================================
+   OLD WISH RESULT
+===================================================== */
+
+.wish-result {
+
+    display: none;
+
+    margin-top: 20px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #ffb7d5;
+
+    animation:
+        wishReveal
+        .7s
+        ease
+        forwards;
+}
+
+.wish-result.show {
+
+    display: block;
+}
+
+@keyframes wishReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.8);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+.confetti {
+
+    position: fixed;
+
+    width: 7px;
+
+    height: 12px;
+
+    top: -20px;
+
+    border-radius: 2px;
+
+    animation:
+        fall
+        3s
+        linear
+        forwards;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+@keyframes fall {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   MOBILE SAFETY
+===================================================== */
+
+@media (max-height: 700px) {
+
+    h1 {
+
+        font-size: 45px;
+    }
+
+    .girl {
+
+        width: 180px;
+
+        height: 230px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="stars" id="stars"></div>
+
+<div class="orb one"></div>
+
+<div class="orb two"></div>
+
+
+
+<!-- =====================================================
+     SCREEN 1
+===================================================== -->
+
+<section
+    class="screen active"
+    id="screen1"
+>
+
+    <div class="small">
+
+        A tiny surprise for you
+
+    </div>
+
+
+    <h1>
+
+        Namaste,<br>
+
+        <span class="highlight">
+
+            Birthday Girl 🌷
+
+        </span>
+
+    </h1>
+
+
+    <p style="margin-top:20px;">
+
+        25Km vachi neku wish chesey
+        opika ledhu 😮‍💨
+
+        <br>
+
+        So I made this to celebrate
+        the birthday of a psycho 🥳🔪
+
+    </p>
+
+
+    <button onclick="nextScreen(2)">
+
+        Vadhu anna nokkuthav ga kani 😌👉
+
+    </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 2
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen2"
+>
+
+    <img
+        src="girl.jpg"
+        class="girl"
+        alt="Birthday"
+    >
+
+
+    <div class="small">
+
+        Nokkesavu ga 😭
+
+    </div>
+
+
+    <h2>
+
+        Inka thappudha 😮‍💨
+
+    </h2>
+
+
+    <h1 style="font-size:43px;">
+
+        Happy Birthday<br>
+
+        <span class="highlight">
+
+            Charishma ❤️
+
+        </span>
+
+    </h1>
+
+
+    <button onclick="nextScreen(3)">
+
+        Inka edchimdhi ley 😂 →
+
+    </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 3
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen3"
+>
+
+    <div class="small">
+
+        Formality kosam thappatley
+
+    </div>
+
+
+    <div class="chat-memory">
+
+        <div class="memory-label">
+
+            And Idhi antha ikkada
+            start ayyimdhi... 👀
+
+        </div>
+
+
+        <img
+            src="onboarding.jpg"
+            alt="Our first conversation"
+        >
+
+
+        <div class="memory-label">
+
+            Appudu just doubts
+            anukunna...
+
+            ippudu chudu
+            ekkadiki vachindo 😂
+
+        </div>
+
+    </div>
+
+
+
+    <div class="message-box">
+
+        <p>
+
+            Onboarding kosam edho
+            chinna doubts ani life lo
+            for the first time
+            matladinappudu innocent
+            anukunna 😌
+
+            <br><br>
+
+            Kani nuv kadhu...
+            asalu innocent nenu ani
+            chala fast ga ardham ayyela
+            chesav.
+
+            Neney anukuntey
+            nakanna worst ga unnav
+            kadhey （⊙ｏ⊙）
+
+            <br><br>
+
+            Sarley,Enthina Bday roju ga
+            so thappaka oka msg:
+
+            Random ga life lo ki vachi
+            naku best friend ayye chance
+            ichinandhuku devudiki
+            thanks cheppuko 🙏😮‍💨
+
+            <br><br>
+
+            Eroju ina ni baddakam
+            pakkana petti next slide
+            ki vellu 👉
+
+        </p>
+
+    </div>
+
+
+    <button onclick="nextScreen(4)">
+
+        Nokkehey →
+
+    </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 4
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen4"
+>
+
+    <div class="small">
+
+        Nokki chudu 👀
+
+    </div>
+
+
+    <h3>
+
+        Niku lagey close ga chusthey
+        thappa lopala original ento
+        kanapadadhu...
+
+        so nokki chudu 👀
+
+    </h3>
+
+
+    <div class="cards">
+
+
+        <!-- CARD 1 -->
+
+        <div
+            class="card"
+            onclick="this.classList.toggle('open')"
+        >
+
+            <div class="card-title">
+
+                Innocence 🌸
+
+            </div>
+
+
+            <div class="card-content">
+
+                Endhuku open chesavey?
+
+                aa word ki neku
+                set avuthumdhi
+                anukunnava?
+
+                <br><br>
+
+                chey close chey
+                urgent ga close chey...👊
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 2 -->
+
+        <div
+            class="card"
+            onclick="this.classList.toggle('open')"
+        >
+
+            <div class="card-title">
+
+                Mental Stability 😂
+
+            </div>
+
+
+            <div class="card-content">
+
+                Ni mood swings ki
+                ee topic entha avoid
+                chesthey antha manchidi.
+
+                <br><br>
+
+                Ina enni sarlu cheppaney
+                mental hospital lo numchi
+                paripovadhu ani.😭🏥
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 3 -->
+
+        <div
+            class="card"
+            onclick="this.classList.toggle('open')"
+        >
+
+            <div class="card-title">
+
+                Aesthetic 🌟
+
+            </div>
+
+
+            <div class="card-content">
+
+                oka genuine doubt
+                e answer cheppu 🤔
+
+                <br><br>
+
+                Okka pic normal ga
+                digadam radha leka
+                ee janma ki inka
+                digava? 📸😭
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 4 -->
+
+        <div
+            class="card"
+            onclick="this.classList.toggle('open')"
+        >
+
+            <div class="card-title">
+
+                Topper 🏆
+
+            </div>
+
+
+            <div class="card-content">
+
+                Avvadaniki dept topper
+                kani em labam? 🏆😭
+
+                <br><br>
+
+                Emina nerpimchey babu antey
+                madam garu chethulu
+                ettestharu 🙏😭
+
+                <br><br>
+
+                Sarley nijam ga
+                next dhey last slide.
+
+                <br>
+
+                Click chey 👉
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <button onclick="nextScreen(5)">
+
+        Last →
+
+    </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 5
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen5"
+>
+
+
+    <!-- =================================================
+         FINAL BIRTHDAY CARD
+    ================================================= -->
+
+    <div
+        class="final-card"
+        id="finalCard"
+    >
+
+
+        <div class="final-heart">
+
+            🎂
+
+        </div>
+
+
+        <div class="small">
+
+            And finally...
+            Na party kosam 🥹
+
+        </div>
+
+
+        <h2>
+
+            I hope this year
+            is really good to you.
+
+        </h2>
+
+
+        <p>
+
+            More happiness.<br>
+
+            More adventures.<br>
+
+            More reasons to smile.<br>
+
+            And obviously...
+            more memories with me 😂
+
+            <br>
+
+            ☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+        </p>
+
+
+        <button
+            onclick="celebrate()"
+            id="birthdayButton"
+        >
+
+            Happy Birthday ❤️
+
+        </button>
+
+
+
+        <!-- =================================================
+             FUNNY GIF
+        ================================================= -->
+
+        <img
+            src="funny.gif"
+            class="birthday-gif"
+            id="birthdayGif"
+            alt="Birthday surprise"
+        >
+
+
+
+        <!-- =================================================
+             PARTY JOKE
+        ================================================= -->
+
+        <div
+            class="party-message"
+            id="partyMessage"
+        >
+
+            <p>
+
+                Sarley,neku inka idhey ekkuva 😂
+
+            </p>
+
+
+            <div class="party-menu">
+
+                <div>
+                    1. 🍗 Grilled Chicken
+                </div>
+
+                <div>
+                    2. 🍚 Chicken Biryani + Thums Up
+                </div>
+
+                <div>
+                    3. 💰 Ni salary account password 😁
+                </div>
+
+            </div>
+
+
+            <p>
+
+                sarey list ok kadha?
+
+                <br>
+
+                inko preparation lo undu vatiki 😌
+
+                <br><br>
+
+                Agu agu.. 👀
+
+                <br>
+
+                Birthday ki wish chesi
+                candles blow cheyyakunda ela?? 🎂🕯️
+
+            </p>
+
+
+            <div class="swipe-hint">
+
+                Piki swipe chey... 👇
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         CANDLE SECTION
+    ================================================= -->
+
+    <div
+        class="candle-section"
+        id="candleSection"
+    >
+
+
+        <div
+            class="candles"
+            id="candles"
+        >
+
+            🕯️ 🕯️ 🕯️
+
+        </div>
+
+
+        <div class="cake">
+
+            🎂
+
+        </div>
+
+
+        <div
+            class="candle-title"
+            id="candleTitle"
+        >
+
+            Make a wish
+            and candles udheyy.. ✨
+
+        </div>
+
+
+        <p id="candleInstruction">
+
+            Wish chesko first...
+            tarvatha blow chey 😌
+
+        </p>
+
+
+        <button
+            onclick="blowCandles()"
+            id="candleButton"
+        >
+
+            Candles Blow 🕯️
+
+        </button>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   RANDOM STAR FIELD
+===================================================== */
+
+const starsContainer =
+    document.getElementById('stars');
+
+
+for (let i = 0; i < 75; i++) {
+
+    const star =
+        document.createElement('span');
+
+    star.className =
+        'star';
+
+    star.innerText =
+        Math.random() > .7
+            ? '✦'
+            : '·';
+
+    star.style.left =
+        Math.random() * 100 + '%';
+
+    star.style.top =
+        Math.random() * 100 + '%';
+
+    star.style.fontSize =
+        (5 + Math.random() * 7) + 'px';
+
+    star.style.setProperty(
+        '--duration',
+        (2.5 + Math.random() * 4) + 's'
+    );
+
+    star.style.setProperty(
+        '--delay',
+        (-Math.random() * 5) + 's'
+    );
+
+    starsContainer.appendChild(star);
+}
+
+
+
+/* =====================================================
+   SCREEN NAVIGATION
+===================================================== */
+
+function nextScreen(number) {
+
+    document
+        .querySelectorAll('.screen')
+        .forEach(screen => {
+
+            screen.classList.remove('active');
+
+        });
+
+
+    document
+        .getElementById('screen' + number)
+        .classList.add('active');
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: 'smooth'
+
+    });
+
+}
+
+
+
+/* =====================================================
+   CELEBRATION
+===================================================== */
+
+let celebrationStarted = false;
+
+let confettiInterval = null;
+
+
+function celebrate() {
+
+    const card =
+        document.getElementById('finalCard');
+
+
+    const gif =
+        document.getElementById('birthdayGif');
+
+
+    const button =
+        document.getElementById('birthdayButton');
+
+
+    if (celebrationStarted)
+
+        return;
+
+
+    celebrationStarted = true;
+
+
+    /*
+       Expand the card
+    */
+
+    card.classList.add('celebrated');
+
+
+    /*
+       Restart GIF
+    */
+
+    gif.src = gif.src;
+
+
+    /*
+       Remove button completely
+    */
+
+    button.remove();
+
+
+    /*
+       Continuous but limited confetti
+    */
+
+    confettiInterval = setInterval(() => {
+
+        createConfetti(5);
+
+    }, 900);
+
+
+    /*
+       Stop confetti after 8 seconds
+    */
+
+    setTimeout(() => {
+
+        clearInterval(confettiInterval);
+
+        confettiInterval = null;
+
+    }, 8000);
+
+}
+
+
+
+/* =====================================================
+   CREATE CONFETTI
+===================================================== */
+
+function createConfetti(amount) {
+
+    const pieces = [
+        '#dfb6ff',
+        '#ffd166',
+        '#ffffff',
+        '#b8a4ff',
+        '#ffb7d5'
+    ];
+
+
+    for (let i = 0; i < amount; i++) {
+
+        const piece =
+            document.createElement('div');
+
+
+        piece.className =
+            'confetti';
+
+
+        piece.style.left =
+            Math.random() * 100 + 'vw';
+
+
+        piece.style.animationDuration =
+            (3 + Math.random() * 2) + 's';
+
+
+        piece.style.animationDelay =
+            Math.random() * .5 + 's';
+
+
+        piece.style.background =
+            pieces[
+                Math.floor(
+                    Math.random() * pieces.length
+                )
+            ];
+
+
+        piece.style.transform =
+            `rotate(${Math.random() * 360}deg)`;
+
+
+        document.body
+            .appendChild(piece);
+
+
+        setTimeout(() => {
+
+            piece.remove();
+
+        }, 6000);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   BLOW CANDLES
+===================================================== */
+
+let candlesBlown = false;
+
+
+function blowCandles() {
+
+    if (candlesBlown)
+
+        return;
+
+
+    candlesBlown = true;
+
+
+    const candles =
+        document.getElementById('candles');
+
+
+    const title =
+        document.getElementById('candleTitle');
+
+
+    const button =
+        document.getElementById('candleButton');
+
+
+    const instruction =
+        document.getElementById(
+            'candleInstruction'
+        );
+
+
+    const cakeSection =
+        document.getElementById(
+            'candleSection'
+        );
+
+
+    /*
+       Blow out candles
+    */
+
+    candles.classList.add('blown');
+
+
+    /*
+       Add cake glow
+    */
+
+    cakeSection.classList.add(
+        'blown-cake'
+    );
+
+
+    /*
+       Replace complete message
+    */
+
+    title.innerHTML = `
+        Your wish is on its way... ✨❤️
+        <br>
+        Inka paduko 😴😂
+    `;
+
+
+    /*
+       Remove button completely
+    */
+
+    button.remove();
+
+
+    /*
+       Remove old instruction completely
+    */
+
+    instruction.remove();
+
+
+    /*
+       Small final celebration
+    */
+
+    createConfetti(12);
+
+}
+
+</script>
+
+
+</body>
+</html>
