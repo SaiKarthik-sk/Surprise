@@ -1645,7 +1645,7 @@ button:active {
 
         <div
             class="card"
-            onclick="this.classList.toggle('open')"
+           onclick="openCard(this)"
         >
 
             <div class="card-title">
@@ -1678,7 +1678,7 @@ button:active {
 
         <div
             class="card"
-            onclick="this.classList.toggle('open')"
+           onclick="openCard(this)"
         >
 
             <div class="card-title">
@@ -1710,7 +1710,7 @@ button:active {
 
         <div
             class="card"
-            onclick="this.classList.toggle('open')"
+           onclick="openCard(this)"
         >
 
             <div class="card-title">
@@ -1742,7 +1742,7 @@ button:active {
 
         <div
             class="card"
-            onclick="this.classList.toggle('open')"
+            onclick="openCard(this)"
         >
 
             <div class="card-title">
@@ -2320,7 +2320,21 @@ function blowCandles() {
     createConfetti(12);
 
 }
+function openCard(card) {
 
+    const cards =
+        document.querySelectorAll('.card');
+
+    cards.forEach(c => {
+
+        if (c !== card) {
+            c.classList.remove('open');
+        }
+
+    });
+
+    card.classList.toggle('open');
+}
 </script>
 
 
