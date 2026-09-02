@@ -42,7 +42,6 @@ body {
     overflow-x: hidden;
 
     background:
-
         radial-gradient(
             circle at 15% 15%,
             rgba(126, 92, 220, .22),
@@ -89,16 +88,11 @@ body {
     opacity: .75;
 }
 
-
-/* Individual random stars */
-
 .star {
 
     position: absolute;
 
     color: #fff;
-
-    font-size: 8px;
 
     opacity: .25;
 
@@ -229,9 +223,6 @@ body {
         ease;
 }
 
-
-/* Default screen animation */
-
 @keyframes screenReveal {
 
     from {
@@ -253,7 +244,7 @@ body {
 
 
 /* =====================================================
-   SCREEN-SPECIFIC REVEALS
+   SCREEN SPECIFIC ANIMATIONS
 ===================================================== */
 
 #screen2.active .girl {
@@ -448,7 +439,6 @@ button {
     border: none;
 
     background:
-
         linear-gradient(
             135deg,
             #ffb7d5,
@@ -470,25 +460,19 @@ button {
     font-size: 14px;
 
     box-shadow:
-
         0 10px 30px
         rgba(255,183,213,.15);
 
     cursor: pointer;
 
     transition:
-
         transform .2s ease,
-
-        box-shadow .2s ease,
-
-        opacity .3s ease;
+        box-shadow .2s ease;
 }
 
 button:hover {
 
     box-shadow:
-
         0 12px 35px
         rgba(255,183,213,.28);
 
@@ -504,7 +488,7 @@ button:active {
 
 
 /* =====================================================
-   SCREEN 2 - GIRL IMAGE
+   SCREEN 2 - GIRL
 ===================================================== */
 
 .girl {
@@ -521,7 +505,6 @@ button:active {
     margin-bottom: 25px;
 
     box-shadow:
-
         0 20px 60px
         rgba(0,0,0,.45),
 
@@ -556,7 +539,6 @@ button:active {
     max-width: 360px;
 
     box-shadow:
-
         0 15px 45px
         rgba(0,0,0,.18),
 
@@ -610,7 +592,6 @@ button:active {
         rgba(255,255,255,.10);
 
     box-shadow:
-
         0 18px 50px
         rgba(0,0,0,.38),
 
@@ -621,9 +602,7 @@ button:active {
         rotate(-1.2deg);
 
     transition:
-
         transform .3s ease,
-
         box-shadow .3s ease;
 }
 
@@ -632,16 +611,11 @@ button:active {
     transform:
         rotate(0deg)
         scale(.98);
-
-    box-shadow:
-
-        0 10px 35px
-        rgba(0,0,0,.4);
 }
 
 
 /* =====================================================
-   CARDS
+   SCREEN 4 CARDS
 ===================================================== */
 
 .cards {
@@ -681,7 +655,6 @@ button:active {
     cursor: pointer;
 
     box-shadow:
-
         0 10px 35px
         rgba(0,0,0,.18),
 
@@ -689,11 +662,8 @@ button:active {
         rgba(255,255,255,.05);
 
     transition:
-
         transform .2s ease,
-
         background .2s ease,
-
         box-shadow .2s ease;
 }
 
@@ -709,7 +679,6 @@ button:active {
         rgba(255,255,255,.075);
 
     box-shadow:
-
         0 15px 40px
         rgba(0,0,0,.25),
 
@@ -743,6 +712,17 @@ button:active {
         fadeIn
         .3s
         ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .75;
+    }
 }
 
 
@@ -788,12 +768,10 @@ button:active {
         rgba(255,255,255,.10);
 
     transition:
-
         all .8s
         cubic-bezier(.2,.8,.2,1);
 
     box-shadow:
-
         0 25px 80px
         rgba(0,0,0,.35),
 
@@ -811,7 +789,6 @@ button:active {
         rgba(190,130,255,.075);
 
     box-shadow:
-
         0 25px 90px
         rgba(0,0,0,.4),
 
@@ -824,7 +801,7 @@ button:active {
 
 
 /* =====================================================
-   FINAL CAKE / HEART
+   FINAL CAKE ICON
 ===================================================== */
 
 .final-heart {
@@ -883,7 +860,6 @@ button:active {
         rgba(255,255,255,.10);
 
     box-shadow:
-
         0 15px 50px
         rgba(0,0,0,.35);
 }
@@ -894,7 +870,6 @@ button:active {
     display: block;
 
     animation:
-
         gifReveal
         .8s
         cubic-bezier(.2,.8,.2,1)
@@ -946,7 +921,6 @@ button:active {
         rgba(255,255,255,.10);
 
     animation:
-
         revealDown
         .8s
         cubic-bezier(.2,.8,.2,1)
@@ -1043,7 +1017,6 @@ button:active {
     opacity: .65;
 
     animation:
-
         swipeBounce
         1.4s
         ease-in-out
@@ -1096,7 +1069,6 @@ button:active {
         rgba(255,255,255,.10);
 
     box-shadow:
-
         0 25px 80px
         rgba(0,0,0,.35),
 
@@ -1106,11 +1078,13 @@ button:active {
     display: none;
 
     animation:
-
         cakeReveal
         .9s
         cubic-bezier(.2,.8,.2,1);
 }
+
+
+/* Show after birthday click */
 
 .final-card.celebrated
 ~ .candle-section {
@@ -1141,7 +1115,7 @@ button:active {
 
 
 /* =====================================================
-   CANDLE FLAMES
+   CANDLES
 ===================================================== */
 
 .candles {
@@ -1153,11 +1127,9 @@ button:active {
     margin-bottom: -4px;
 
     transition:
-
         all .6s ease;
 
     animation:
-
         candleFlicker
         1s
         ease-in-out
@@ -1181,9 +1153,6 @@ button:active {
             scale(1.03);
     }
 }
-
-
-/* After blowing */
 
 .candles.blown {
 
@@ -1219,9 +1188,7 @@ button:active {
         );
 
     transition:
-
         transform .6s ease,
-
         filter .6s ease;
 }
 
@@ -1254,58 +1221,7 @@ button:active {
     margin-bottom: 12px;
 
     transition:
-
-        color .5s ease,
-
-        transform .5s ease;
-}
-
-
-/* =====================================================
-   OLD WISH RESULT
-===================================================== */
-
-.wish-result {
-
-    display: none;
-
-    margin-top: 20px;
-
-    font-size: 16px;
-
-    line-height: 1.8;
-
-    color: #ffb7d5;
-
-    animation:
-        wishReveal
-        .7s
-        ease
-        forwards;
-}
-
-.wish-result.show {
-
-    display: block;
-}
-
-@keyframes wishReveal {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(.8);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            scale(1);
-    }
+        color .5s ease;
 }
 
 
@@ -1350,7 +1266,371 @@ button:active {
 
 
 /* =====================================================
-   MOBILE SAFETY
+   LETTER SECTION
+===================================================== */
+
+.letter-section {
+
+    width: 100%;
+
+    max-width: 390px;
+
+    margin-top: 35px;
+
+    position: relative;
+
+    display: none;
+}
+
+.letter-section.revealed {
+    display: block;
+}
+/* =====================================================
+   CLOSED LETTER
+===================================================== */
+
+.letter-closed {
+
+    padding: 32px 20px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.32),
+
+        inset 0 1px
+        rgba(255,255,255,.06);
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   LETTER ICON
+===================================================== */
+
+.letter-icon {
+
+    font-size: 48px;
+
+    margin-bottom: 12px;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(255,183,213,.3)
+        );
+}
+
+
+/* =====================================================
+   LETTER HEADING
+===================================================== */
+
+.letter-heading {
+
+    font-family:
+        'DM Serif Display',
+        serif;
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.letter-subtitle {
+
+    font-size: 13px;
+
+    opacity: .65;
+
+    line-height: 1.7;
+
+    max-width: 310px;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   OPEN LETTER BUTTON
+===================================================== */
+
+.open-letter-btn {
+
+    margin-top: 25px;
+
+    padding:
+        13px 27px;
+
+    font-size: 14px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    color: #ffb7d5;
+
+    border:
+        1px solid
+        rgba(255,183,213,.35);
+
+    box-shadow: none;
+}
+
+.open-letter-btn:hover {
+
+    background:
+        rgba(255,183,213,.10);
+
+    box-shadow:
+        0 0 25px
+        rgba(255,183,213,.10);
+}
+
+
+/* =====================================================
+   OPENED LETTER CARD
+===================================================== */
+.letter-opened {
+
+    display: none;
+
+    padding:
+        34px 26px 30px;
+
+    border-radius: 28px;
+
+    /* SAME NIGHT SKY GLASS THEME */
+    background:
+        linear-gradient(
+            145deg,
+            rgba(45, 31, 65, .96),
+            rgba(29, 23, 48, .96)
+        );
+
+    color: #fff;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    box-shadow:
+
+        0 25px 80px
+        rgba(0,0,0,.45),
+
+        0 0 45px
+        rgba(190,130,255,.10),
+
+        inset 0 1px
+        rgba(255,255,255,.07);
+
+    text-align: left;
+
+    animation:
+        letterOpen
+        .7s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+.letter-section.opened
+.letter-closed {
+
+    display: none;
+}
+
+.letter-section.opened
+.letter-opened {
+
+    display: block;
+}
+
+@keyframes letterOpen {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.96);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   OPENED LETTER TOP
+===================================================== */
+
+.opened-letter-icon {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    margin-bottom: 8px;
+}
+
+.letter-opened .small {
+
+    text-align: center;
+
+    color: #8b687a;
+
+    margin-bottom: 5px;
+}
+
+.letter-opened h2 {
+
+    text-align: center;
+
+    color: #e65c9b;
+
+    font-size:
+        clamp(30px, 8vw, 38px);
+
+    margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   NOTE LINES
+===================================================== */
+
+.note-lines {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+.note-lines p {
+
+    position: relative;
+
+    padding-left: 20px;
+
+    font-family:
+        'DM Serif Display',
+        serif;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    line-height: 1.7;
+
+    color: #f3e8f1;
+
+    opacity: .92;
+
+    max-width: none;
+}
+.note-lines p::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 3px;
+
+    width: 3px;
+
+    height:
+        calc(100% - 6px);
+
+    border-radius: 3px;
+
+    background:
+        #efa8c7;
+}
+
+
+/* =====================================================
+   NOTE ENDING
+===================================================== */
+
+.note-ending {
+
+    margin-top: 32px;
+
+    max-width: none;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #e9dce7;
+
+    opacity: .85;
+}
+.letter-opened .small {
+    color: #cdb8cc;
+}
+/* =====================================================
+   FOLD BUTTON
+===================================================== */
+
+.fold-button {
+
+    display: block;
+
+    margin:
+        28px auto 0;
+
+    padding:
+        11px 25px;
+
+    font-size: 13px;
+
+    background:
+        rgba(255,183,213,.10);
+
+    color: #9c426d;
+
+    border:
+        1px solid
+        rgba(231,130,174,.45);
+
+    box-shadow: none;
+}
+
+.fold-button:hover {
+
+    background:
+        rgba(255,183,213,.18);
+}
+
+
+/* =====================================================
+   MOBILE
 ===================================================== */
 
 @media (max-height: 700px) {
@@ -1367,6 +1647,17 @@ button:active {
         height: 230px;
     }
 
+    .letter-opened {
+
+        padding:
+            28px 22px 25px;
+    }
+
+    .letter-opened h2 {
+
+        margin-bottom: 28px;
+    }
+
 }
 
 
@@ -1380,11 +1671,14 @@ button:active {
     *::before,
     *::after {
 
-        animation-duration: .01ms !important;
+        animation-duration:
+            .01ms !important;
 
-        animation-iteration-count: 1 !important;
+        animation-iteration-count:
+            1 !important;
 
-        scroll-behavior: auto !important;
+        scroll-behavior:
+            auto !important;
     }
 
 }
@@ -1400,7 +1694,10 @@ button:active {
      BACKGROUND
 ===================================================== -->
 
-<div class="stars" id="stars"></div>
+<div
+    class="stars"
+    id="stars"
+></div>
 
 <div class="orb one"></div>
 
@@ -1558,7 +1855,6 @@ button:active {
     </div>
 
 
-
     <div class="message-box">
 
         <p>
@@ -1645,7 +1941,7 @@ button:active {
 
         <div
             class="card"
-           onclick="openCard(this)"
+            onclick="openCard(this)"
         >
 
             <div class="card-title">
@@ -1678,7 +1974,7 @@ button:active {
 
         <div
             class="card"
-           onclick="openCard(this)"
+            onclick="openCard(this)"
         >
 
             <div class="card-title">
@@ -1710,7 +2006,7 @@ button:active {
 
         <div
             class="card"
-           onclick="openCard(this)"
+            onclick="openCard(this)"
         >
 
             <div class="card-title">
@@ -1801,7 +2097,7 @@ button:active {
 
 
     <!-- =================================================
-         FINAL BIRTHDAY CARD
+         FINAL CARD
     ================================================= -->
 
     <div
@@ -1863,7 +2159,7 @@ button:active {
 
 
         <!-- =================================================
-             FUNNY GIF
+             GIF
         ================================================= -->
 
         <img
@@ -1873,10 +2169,8 @@ button:active {
             alt="Birthday surprise"
         >
 
-
-
         <!-- =================================================
-             PARTY JOKE
+             PARTY MESSAGE
         ================================================= -->
 
         <div
@@ -1887,8 +2181,9 @@ button:active {
             <p>
 
                 Sarley,neku inka idhey ekkuva 😂
-               <br><br>
-               Idhigo naku kavalsina party list:
+                <br>
+                <br>
+                Naku kavalsina party menu idhigo:
             </p>
 
 
@@ -1931,7 +2226,7 @@ button:active {
 
             <div class="swipe-hint">
 
-                Inka undhi swipe chey... 👇
+                Kindhaki swipe chey... 👇
 
             </div>
 
@@ -1995,6 +2290,148 @@ button:active {
             Candles Blow 🕯️
 
         </button>
+
+    </div>
+
+
+
+    <!-- =================================================
+         LETTER SECTION
+    ================================================= -->
+
+    <div
+        class="letter-section"
+        id="letterSection"
+    >
+
+
+        <!-- CLOSED LETTER -->
+
+        <div
+            class="letter-closed"
+            id="letterClosed"
+        >
+
+            <div class="letter-icon">
+
+                💌
+
+            </div>
+
+
+            <div class="small">
+
+                One last thing...
+
+            </div>
+
+
+            <div class="letter-heading">
+
+                A tiny note, just for you
+
+            </div>
+
+
+            <div class="letter-subtitle">
+
+                Chinna final touch 🫶
+
+            </div>
+
+
+            <button
+                class="open-letter-btn"
+                onclick="openLetter()"
+            >
+
+                Open the letter 💌
+
+            </button>
+
+        </div>
+
+
+
+        <!-- OPENED LETTER -->
+
+        <div
+            class="letter-opened"
+            id="letterOpened"
+        >
+
+
+            <div class="opened-letter-icon">
+
+                💌
+
+            </div>
+
+
+            <div class="small">
+
+                A little note...
+
+            </div>
+
+
+            <h2>
+
+                A note, just for you
+
+            </h2>
+
+
+            <div class="note-lines">
+
+
+                <p>
+
+                    Envolepe chusi ekkuva bari message lu expect cheyaku, kani chinna note matrame. 😌
+
+                </p>
+
+
+                <p>
+
+                   Completely unexpected ga vachi naku best friend ayyav. Questionable decision but i appreciate it 🙏
+
+                </p>
+
+
+                <p>
+
+                    Last ga okka mata:<br>
+                    Gift koni iyyadaniki niku la monthly salary ledhu so money spend cheyyaleka na daggara unna time ee spend chesi chesa ee website<br>
+                    U better appreciate it 😌 u ungreatful women 😏
+                </p>
+
+
+            </div>
+
+
+            <p class="note-ending">
+
+                Thank you for being you.
+                Today, tomorrow, and every
+                loud, silly, beautiful year
+                after this one. 🤍
+
+            </p>
+
+
+            <button
+                class="fold-button"
+                onclick="closeLetter()"
+            >
+
+                Fold it back up
+
+            </button>
+
+
+        </div>
+
 
     </div>
 
@@ -2088,6 +2525,34 @@ function nextScreen(number) {
 
 
 /* =====================================================
+   SCREEN 4
+   ONLY ONE CARD OPEN AT A TIME
+===================================================== */
+
+function openCard(card) {
+
+    const cards =
+        document.querySelectorAll('.card');
+
+
+    cards.forEach(c => {
+
+        if (c !== card) {
+
+            c.classList.remove('open');
+
+        }
+
+    });
+
+
+    card.classList.toggle('open');
+
+}
+
+
+
+/* =====================================================
    CELEBRATION
 ===================================================== */
 
@@ -2119,7 +2584,7 @@ function celebrate() {
 
 
     /*
-       Expand the card
+       Expand final card
     */
 
     card.classList.add('celebrated');
@@ -2140,14 +2605,15 @@ function celebrate() {
 
 
     /*
-       Continuous but limited confetti
+       Start gentle confetti
     */
 
-    confettiInterval = setInterval(() => {
+    confettiInterval =
+        setInterval(() => {
 
-        createConfetti(5);
+            createConfetti(5);
 
-    }, 900);
+        }, 900);
 
 
     /*
@@ -2156,7 +2622,9 @@ function celebrate() {
 
     setTimeout(() => {
 
-        clearInterval(confettiInterval);
+        clearInterval(
+            confettiInterval
+        );
 
         confettiInterval = null;
 
@@ -2173,11 +2641,13 @@ function celebrate() {
 function createConfetti(amount) {
 
     const pieces = [
+
         '#dfb6ff',
         '#ffd166',
         '#ffffff',
         '#b8a4ff',
         '#ffb7d5'
+
     ];
 
 
@@ -2249,15 +2719,21 @@ function blowCandles() {
 
 
     const candles =
-        document.getElementById('candles');
+        document.getElementById(
+            'candles'
+        );
 
 
     const title =
-        document.getElementById('candleTitle');
+        document.getElementById(
+            'candleTitle'
+        );
 
 
     const button =
-        document.getElementById('candleButton');
+        document.getElementById(
+            'candleButton'
+        );
 
 
     const instruction =
@@ -2273,14 +2749,16 @@ function blowCandles() {
 
 
     /*
-       Blow out candles
+       Blow candles
     */
 
-    candles.classList.add('blown');
+    candles.classList.add(
+        'blown'
+    );
 
 
     /*
-       Add cake glow
+       Glow cake
     */
 
     cakeSection.classList.add(
@@ -2289,25 +2767,29 @@ function blowCandles() {
 
 
     /*
-       Replace complete message
+       Replace message
     */
 
     title.innerHTML = `
+
         Your wish is on its way... ✨❤️
+
         <br>
+
         Inka paduko 😴😂
+
     `;
 
 
     /*
-       Remove button completely
+       Remove button
     */
 
     button.remove();
 
 
     /*
-       Remove old instruction completely
+       Remove old instruction
     */
 
     instruction.remove();
@@ -2319,22 +2801,110 @@ function blowCandles() {
 
     createConfetti(12);
 
+
+    /*
+       Reveal letter naturally
+    */
+
+setTimeout(() => {
+
+    const letter =
+        document.getElementById('letterSection');
+
+    /* Show the envelope */
+    letter.classList.add('revealed');
+
+    /*
+       Wait a little so the envelope
+       becomes visible first
+    */
+    setTimeout(() => {
+
+        const letterTop =
+            letter.getBoundingClientRect().top
+            + window.scrollY;
+
+        /*
+           Scroll slightly above the envelope
+           so the whole card is visible
+        */
+        window.scrollTo({
+
+            top: letterTop - 80,
+
+            behavior: 'smooth'
+
+        });
+
+    }, 150);
+
+}, 900);
+
 }
-function openCard(card) {
 
-    const cards =
-        document.querySelectorAll('.card');
 
-    cards.forEach(c => {
 
-        if (c !== card) {
-            c.classList.remove('open');
-        }
+/* =====================================================
+   OPEN LETTER
+===================================================== */
 
-    });
+let letterOpened = false;
 
-    card.classList.toggle('open');
+
+function openLetter() {
+
+    if (letterOpened)
+
+        return;
+
+
+    letterOpened = true;
+
+
+    const letterSection =
+        document.getElementById(
+            'letterSection'
+        );
+
+
+    letterSection.classList.add(
+        'opened'
+    );
+
+
+    /*
+       Small sparkle effect
+    */
+
+    setTimeout(() => {
+
+        createConfetti(8);
+
+    }, 400);
+
 }
+
+/* =====================================================
+   CLOSE / FOLD LETTER
+===================================================== */
+
+function closeLetter() {
+
+    const letterSection =
+        document.getElementById(
+            'letterSection'
+        );
+
+
+    letterSection.classList.remove(
+        'opened'
+    );
+
+
+    letterOpened = false;
+
+}
+
 </script>
 
 
